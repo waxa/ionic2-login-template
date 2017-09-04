@@ -1,8 +1,12 @@
 {
   "name": "easy-list-client",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "version": "0.1.0",
+  "description": "easy lists for everyone",
+  "author": {
+    "name": "Víctor <waxa> Lara",
+    "email": "waxaman@gmail.com"
+  },
+  "license": "MIT",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -33,6 +37,5 @@
   "devDependencies": {
     "@ionic/app-scripts": "2.1.4",
     "typescript": "2.3.4"
-  },
-  "description": "An Ionic project"
+  }
 }
