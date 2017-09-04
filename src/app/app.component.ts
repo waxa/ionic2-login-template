@@ -9,13 +9,12 @@ import { LoginPage } from '../pages/login/login';
 @Component({
   templateUrl: 'app.html'
 })
+
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
-
   showMenu: boolean = false;
-
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -31,7 +30,6 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Login', component: LoginPage }
     ];
-
   }
 
   initializeApp() {
@@ -42,5 +40,4 @@ export class MyApp {
       this.splashScreen.hide();
     });
   }
-
 }
