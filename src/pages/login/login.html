@@ -1,12 +1,29 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Login</ion-title>
+    <ion-title text-center>Login</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list padding-horizontal no-margin>
+    <ion-item text-right>
+      <button ion-button color="danger" padding (click)="onClickRegistrarse()">Registrarse</button>
+    </ion-item>
+  </ion-list>
+  <ion-list padding-horizontal>
+    <ion-item padding-horizontal>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item padding-horizontal>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-item padding text-center>
+      <button ion-button color="secondary" padding (click)="onClickEntrar()">Login</button>
+    </ion-item>
+  </ion-list>
 </ion-content>

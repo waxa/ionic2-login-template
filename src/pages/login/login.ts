@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+import { RegistroPage } from '../registro/registro';
 
 @Component({
   templateUrl: 'login.html'
@@ -8,8 +9,20 @@ import { NavController, NavParams } from 'ionic-angular';
 export class LoginPage {
 
   constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams
+    public navCtrl: NavController
   ) {}
+
+  private ionViewDidLoad(): void {
+    console.log('ionViewDidLoad LoginPage');
+  }
+
+  private onClickEntrar(): void {
+    console.log("Entrar clicked");
+  }
+
+  private onClickRegistrarse(): void {
+    console.log("Registrarse clicked");
+    this.navCtrl.push(RegistroPage);
+  }
 
 }
