@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
-  templateUrl: 'registro.html',
+  templateUrl: 'registro.html'
 })
 
 export class RegistroPage {
@@ -14,7 +14,7 @@ export class RegistroPage {
     console.log('ionViewDidLoad RegistroPage');
   }
 
-  private onClickRegistrar(): void {
+  public onClickRegistrar(): void {
     console.log("Regitrar clicked");
   }
 
