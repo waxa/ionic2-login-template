@@ -14,13 +14,14 @@ import { User } from '../../models/user';
 export class HttpProvider {
 
   url: string = 'http://localhost:27042/api';
+  credentials: any = { withCredentials: true };
 
   constructor(public http: Http) {
     console.log('Hello HttpServiceProvider Provider');
   }
 
   public getLogin(): Promise<boolean> {
-    return this.http.get(this.url + '/login', { withCredentials: true })
+    return this.http.get(this.url + '/login', this.credentials)
     .toPromise()
     .then(response => {
       if ( response.status >= 200 && response.status < 300 ) {
@@ -33,7 +34,7 @@ export class HttpProvider {
   }
 
   public postLogin(username: string, password: string): Promise<boolean> {
-    return this.http.post(this.url + '/login', {username: username, password: password})
+    return this.http.post(this.url + '/login', {username: username, password: password}, this.credentials)
     .toPromise()
     .then(response => {
       if ( response.status >= 200 && response.status < 300 ) {
@@ -46,7 +47,7 @@ export class HttpProvider {
   }
 
   public deleteLogin(): Promise<boolean> {
-    return this.http.delete(this.url + '/login')
+    return this.http.delete(this.url + '/login', this.credentials)
     .toPromise()
     .then(response => {
       if ( response.status >= 200 && response.status < 300 ) {

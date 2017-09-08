@@ -17,7 +17,7 @@ export class HomePage {
     console.log("ionViewDidEnter home");
     this.httpProvider.getLogin()
     .then( response => console.log("ionViewDidEnter home loged ok") )
-    .catch( error => console.log("ionViewDidEnter home loged not ok") );
+    .catch( error => console.log("ionViewDidEnter home filoged not ok") );
   }
 
   public logout(): void {
