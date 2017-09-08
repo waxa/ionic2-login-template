@@ -19,6 +19,45 @@ export class HttpProvider {
     console.log('Hello HttpServiceProvider Provider');
   }
 
+  public getLogin(): Promise<boolean> {
+    return this.http.get(this.url + '/login', { withCredentials: true })
+    .toPromise()
+    .then(response => {
+      if ( response.status >= 200 && response.status < 300 ) {
+        return Promise.resolve(true);
+      } else {
+        return Promise.resolve(false);
+      }
+    })
+    .catch(this.handleError);
+  }
+
+  public postLogin(username: string, password: string): Promise<boolean> {
+    return this.http.post(this.url + '/login', {username: username, password: password})
+    .toPromise()
+    .then(response => {
+      if ( response.status >= 200 && response.status < 300 ) {
+        return Promise.resolve(true);
+      } else {
+        return Promise.resolve(false);
+      }
+    })
+    .catch(this.handleError);
+  }
+
+  public deleteLogin(): Promise<boolean> {
+    return this.http.delete(this.url + '/login')
+    .toPromise()
+    .then(response => {
+      if ( response.status >= 200 && response.status < 300 ) {
+        return Promise.resolve(true);
+      } else {
+        return Promise.resolve(false);
+      }
+    })
+    .catch(this.handleError);
+  }
+
   public getUsers(): Promise<User[]> {
     return this.http.get(this.url + '/users')
       .toPromise()

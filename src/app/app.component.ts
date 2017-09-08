@@ -14,7 +14,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
-  showMenu: boolean = false;
+  showMenu: boolean = true;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -39,5 +39,9 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  public openPage(p): void {
+    this.nav.setRoot(p);
   }
 }
