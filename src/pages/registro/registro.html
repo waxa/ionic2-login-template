@@ -5,21 +5,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-list padding>
+  <form padding (ngSubmit)="onClickRegistrar()" #registroForm="ngForm">
     <ion-item padding-horizontal>
       <ion-label floating>Username</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="username" name="username" required></ion-input>
     </ion-item>
     <ion-item padding-horizontal>
       <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
     </ion-item>
-    <!-- <ion-item padding-horizontal>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item> -->
     <ion-item padding text-center>
-      <button ion-button color="secondary" padding (click)="onClickRegistrar()">Registrar</button>
+      <button ion-button padding color="secondary" type="submit" [disabled]="!registroForm.form.valid">Registrar</button>
     </ion-item>
-  </ion-list>
+  </form>
 </ion-content>

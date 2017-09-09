@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { HttpProvider } from '../../providers/http/http.service';
+import { LoginPage } from '../login/login';
 
 @Component({
   templateUrl: 'home.html'
@@ -14,16 +15,16 @@ export class HomePage {
   ) {}
 
   public ionViewDidEnter(): void {
-    console.log("ionViewDidEnter home");
+    console.log("ionViewDidEnter HomePage");
     this.httpProvider.getLogin()
-    .then( response => console.log("ionViewDidEnter home loged ok") )
-    .catch( error => console.log("ionViewDidEnter home filoged not ok") );
+    .then( response => console.log("HomePage getLogin ok") ) // pedir datos
+    .catch( error => this.navCtrl.setRoot(LoginPage) );
   }
 
   public logout(): void {
     this.httpProvider.deleteLogin()
-    .then( response => console.log("logout ok") )
-    .catch( error => console.log("logout not ok") );
+    .then( response => this.navCtrl.setRoot(LoginPage) )
+    .catch( error => this.navCtrl.setRoot(LoginPage) );
   }
 
 }
